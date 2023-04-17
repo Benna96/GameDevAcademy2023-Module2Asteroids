@@ -1,2 +1,7 @@
 # GameDevAcademy2023-Module2Asteroids
-Repo for the module 2 project of Game Dev Academy 2023.
+A practice project for Game Dev Academy 2023. ⭐⭐⭐ version.  
+A recreation od the classic Asteroids game.
+
+Includes multiple levels and smooth screen wrapping.
+
+Build with Unity 2021.3.21f1.
