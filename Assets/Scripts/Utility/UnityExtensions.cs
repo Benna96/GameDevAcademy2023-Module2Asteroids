@@ -15,8 +15,6 @@ public static class TransformExtensions
                 _ => GetChild(parent, namePart)
             };
 
-        if (parent == null)
-            Debug.LogWarning("Transform at path not found & unable to create!");
         return parent;
 
         static Transform GetChild(Transform parent, string namePart)

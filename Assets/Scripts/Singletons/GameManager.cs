@@ -99,7 +99,6 @@ public class GameManager : Singleton<GameManager>
     public void UpdateLives(int livesChange)
     {
         lives += livesChange;
-        Debug.Log($"Lives: {lives}");
 
         if (UIManager.instance != null)
             UIManager.instance.UpdateLives(lives);

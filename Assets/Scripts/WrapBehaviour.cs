@@ -113,12 +113,9 @@ public class WrapBehaviour : MonoBehaviour
     private void SetActiveGhosts(bool value)
     {
         if (!isGhost && CompareTag("Player"))
-        {
-            Debug.Log("Disabled");
             foreach (var ghost in ghosts)
                 if (ghost != null)
                     ghost.gameObject.SetActive(value);
-        }
     }
 
     protected virtual void OnDestroy() {

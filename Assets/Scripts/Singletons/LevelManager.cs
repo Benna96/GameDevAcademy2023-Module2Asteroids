@@ -269,7 +269,6 @@ public class LevelManager : Singleton<LevelManager>
             int collisions = Physics2D.OverlapCircle(pos, objectToSpawn.radius, filter, results);
 
             bool overlapsOtherSpawned = posList.Any(x => Vector2.Distance(pos, x) < objectToSpawn.radius);
-            Debug.Log(overlapsOtherSpawned);
 
             return (collisions > allowedOverlaps) || overlapsOtherSpawned;
         }
