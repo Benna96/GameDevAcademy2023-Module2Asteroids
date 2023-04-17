@@ -1,6 +1,6 @@
 # GameDevAcademy2023-Module2Asteroids
 A practice project for Game Dev Academy 2023. ⭐⭐⭐ version.  
-A recreation od the classic Asteroids game.
+A recreation of the classic Asteroids game.
 
 Includes multiple levels and smooth screen wrapping.
 
