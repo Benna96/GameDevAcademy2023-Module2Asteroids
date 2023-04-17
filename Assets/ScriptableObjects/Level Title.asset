@@ -18,7 +18,7 @@ MonoBehaviour:
     - {fileID: 8853018513751407659, guid: 631816b28d197e845b9880c6abc506a3, type: 3}
     - {fileID: 7647070289838200422, guid: b2d29d3707802334a9f4293e91d28939, type: 3}
     - {fileID: 4402082773097973408, guid: fc5b44568cd66944a9f88b0b04c4da37, type: 3}
-    m_values: 0c0000000800000005000000
+    m_values: 040000000600000003000000
   <safetyzoneSizeRelativeToPlayer>k__BackingField: 1.5
   <invincibilityDuration>k__BackingField: 2
   <backgrounds>k__BackingField:
