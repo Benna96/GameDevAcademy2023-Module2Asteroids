@@ -737,8 +737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755bc6836408b5a45b37b74f5b6c4ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 1006792444}
-  livesContainer: {fileID: 1594021934}
+  <score>k__BackingField: {fileID: 1006792444}
+  <livesContainer>k__BackingField: {fileID: 1594021934}
 --- !u!225 &1106958258
 CanvasGroup:
   m_ObjectHideFlags: 0
