@@ -57,36 +57,52 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene((int)newScene, LoadSceneMode.Additive);
 
         if (newScene == Scene.Level)
+        {
             LevelManager.instance.LoadLevel(1);
+            UnityEngine.SceneManagement.Scene? maybeLevelScene = GetScene(Scene.Level);
+            if (maybeLevelScene is UnityEngine.SceneManagement.Scene levelScene)
+                SetActiveBackgroundMusic(levelScene, true);
+        }
 
         // If adding end scene onto level scene, mute level scene audio
         else if (newScene == Scene.End)
         {
-            UnityEngine.SceneManagement.Scene? maybeLevelScene = null;
+            UnityEngine.SceneManagement.Scene? maybeLevelScene = GetScene(Scene.Level);
+            if (maybeLevelScene is UnityEngine.SceneManagement.Scene levelScene)
+                SetActiveBackgroundMusic(levelScene, false);
+        }
+
+        static void SetActiveBackgroundMusic(UnityEngine.SceneManagement.Scene levelScene, bool setActive)
+        {
+            foreach (var rootObject in levelScene.GetRootGameObjects())
+            {
+                if (rootObject.name == "Audio")
+                {
+                    var background = rootObject.transform.Find("Background");
+                    if (background != null)
+                    {
+                        var backgroundAudios = background.GetComponents<AudioSource>();
+                        foreach (var backgroundAudio in backgroundAudios)
+                            backgroundAudio.volume = setActive ? 1 : 0;
+                    }
+                }
+            }
+        }
+
+        static UnityEngine.SceneManagement.Scene? GetScene(Scene sceneBuildIndex)
+        {
+            UnityEngine.SceneManagement.Scene? maybeScene = null;
             for (int i = 0; i <= SceneManager.sceneCount; i++)
             {
                 var scene = SceneManager.GetSceneAt(i);
-                if (scene.buildIndex == (int)Scene.Level)
+                if (scene.buildIndex == (int)sceneBuildIndex)
                 {
-                    maybeLevelScene = scene;
+                    maybeScene = scene;
                     break;
                 }
             }
 
-            if (maybeLevelScene is UnityEngine.SceneManagement.Scene levelScene)
-                foreach (var rootObject in levelScene.GetRootGameObjects())
-                {
-                    if (rootObject.name == "Audio")
-                    {
-                        var background = rootObject.transform.Find("Background");
-                        if (background != null)
-                        {
-                            var backgroundAudios = background.GetComponents<AudioSource>();
-                            foreach (var backgroundAudio in backgroundAudios)
-                                backgroundAudio.volume = 0;
-                        }
-                    }
-                }
+            return maybeScene;
         }
     }
 
