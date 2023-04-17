@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb2ef6951cf44d47b52967c8dc873a8, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  <enemiesToSpawn>k__BackingField:
+    m_keys:
+    - {fileID: 8853018513751407659, guid: 631816b28d197e845b9880c6abc506a3, type: 3}
+    - {fileID: 7647070289838200422, guid: b2d29d3707802334a9f4293e91d28939, type: 3}
+    - {fileID: 4402082773097973408, guid: fc5b44568cd66944a9f88b0b04c4da37, type: 3}
+    m_values: 040000000700000006000000
+  <safetyzoneSizeRelativeToPlayer>k__BackingField: 2.5
+  <invincibilityDuration>k__BackingField: 5
+  <backgrounds>k__BackingField:
+  - {fileID: 21300000, guid: d9b31ebd60af68c469212c1a9f513e74, type: 3}
+  - {fileID: 21300000, guid: efe6ce32a6a4408489775c70e5d32f11, type: 3}
