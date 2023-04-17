@@ -34,6 +34,12 @@ public class PlayerController : WrapBehaviour
         }
     }
     public float iframeTimeRemaining { get; set; }
+    private Color rendererColorOriginal { get; set; }
+
+    private void Awake()
+    {
+        rendererColorOriginal = GetComponent<SpriteShapeRenderer>().color;
+    }
 
     protected override void Start()
     {
@@ -122,11 +128,7 @@ public class PlayerController : WrapBehaviour
         isInvincible = true;
         iframeTimeRemaining = duration;
         var renderer = GetComponent<SpriteShapeRenderer>();
-        var r = renderer.color.r;
-        var g = renderer.color.g;
-        var b = renderer.color.b;
-        var a = renderer.color.a;
-        Color modifiedColor = new(r, g, b, a);
+        Color modifiedColor = rendererColorOriginal;
 
         while (isInvincible)
         {
@@ -136,6 +138,6 @@ public class PlayerController : WrapBehaviour
             yield return null;
         }
 
-        renderer.color = new(r, g, b, a);
+        renderer.color = rendererColorOriginal;
     }
 }
